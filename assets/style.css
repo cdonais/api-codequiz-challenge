@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+:root{
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: koulen, cursive;
+    color: aliceblue;
+}
+h1 {
+    font-size: 48px;
+    border-bottom: 5px solid red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.instructions {
+    padding: 30px;
+    border-radius: 15%;
+    background-color: rgb(139, 133, 133);
+    text-align: center;
+    border: red solid 2px;
+}
+.instructions h2 {
+    color: yellow;
+    font-weight: bold;
+    font-size: 30px;
+}
+.instructions p {
+    font-size: 28px;
+}
+.start-btn {
+    padding: 5px;
+    border-radius: 15%;
+    background-color: yellow;
+    color: black;
+    border: black solid 2px;
+}
+.start-btn:hover {
+    color: red;
+}
+.score-btn {
+    padding: 5px;;
+    border-radius: 15%;
+    background-color: yellow;
+    color: black;
+    border: black solid 2px;
+}
+.score-btn:hover{
+    color: red;
+}
