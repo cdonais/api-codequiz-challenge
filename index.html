@@ -11,29 +11,28 @@
     <header>
         <h1>Coding Quiz</h1>
     </header>
-    <div class="instructions">
+    <div id="instructions">
         <h2>Instructions:</h2>
         <p>You will have 2 minutes to answer 5 questions about JavaScript.</p>
         <p>For every correct answer, you will receive 20 points. For every</p>
         <p>incorrect answer, you will lose 10 seconds on the timer. </p>
         <p> Press start to begin. Good luck!</p>
-        <button class="start-btn">Start</button>
-        <button class="score-btn">High Scores</button>
+        <button id="startButton">Start</button>
+        <button id="scoreButton">High Scores</button>
     </div>
-    <div class="quiz-box">
-        <header>
+    <div id="quizBox">
             <div class="timer">Time Remaining</div>
             <div class="score">Score</div>
-        </header>
         <section>
-            <div class="question-text">
-
+            <div id="question">Question</div>
+            <div id="choices">
+                <button class="btn"><span>Answer 1</span></button>
+                <button class="btn"><span>Answer 2</span></button>
+                <button class="btn"><span>Answer 3</span></button>
+                <button class="btn"><span>Answer 4</span></button>
             </div>
-            <div class="choice-text">
-
-            </div>
+            <button id="nextButton">Next</button>
         </section>
-        <button type="submit" class="sumbit-btn">Sumbit</button>
     </div>
     <script src="./assets/script.js"></script>
 </body>

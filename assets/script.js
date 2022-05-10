@@ -1,65 +1,46 @@
+var playerScore=0;
+var timeRemaining=120;
+startButton.addEventListener('click', startQuiz);
+nextButton.addEventListener('click', nextQuestion);
 //click start button to start quiz
-//show first question
-//after submit, show next question
-//after last question, give score
+function startQuiz(){
+    if (instructions.style.display !=="none"){
+        instructions.style.display ="none";
+        quizBox.style.display="block"
+    };
+function nextQuestion(){
+
+}
+function chooseAnswer(){
+    
+}
+    if (questions.length>currentQuestionIndex + 1){
+    nextButton.classList.remove('hide')
+    }
+    //after submit, show next question
+//if answer was correct update score
+    if (playerChoice=answer) {
+        playerScore=playerScore + 20;
+    }
+//if answer was incorrect subtract timer
+    else {timeRemaining=timeRemaining-10};
+//after last question, give final score
+    var finalScore=playerScore;
 //ask for initials
 //save score to local storage
 //on high scores click, take to page with high scores
-
+}
 //create questions
 
-let questions= [
-    {number: 1,
-        question: "Which JavaScript data type is always either true or false?",
-        answer: "Booleans",
+const questions= [
+    {question: "Which JavaScript data type is always either true or false?",
         choices: [
-            "String",
-            "Boolean",
-            "Array",
-            "Object",
+            {text:"String", correct: false},
+            {text:"Boolean", correct: true},
+            {text:"Array", correct: false},
+            {text:"Object", correct: false},
         ]
 
     },
-    {number: 2,
-        question: "String values must be enclosed in what?",
-        answer: "Quotes",
-        choices: [
-            "Quotes",
-            "Curly brackets",
-            "Paranthesis",
-            "None of the above",
-        ]
-    },
-    {number: 3,
-        question: "What does JSON stand for?",
-        answer: "JavaScript Object Notation",
-        choices: [
-            "JavaScript Open Note",
-            "JavaScript Open Notation",
-            "JavaScript Object Notation",
-            "JavaScript?! OH, NO!",
-        ]
-
-    },
-    {number: 4,
-        question: "Where is the best place to put a variable you will use in multiple functions?",
-        answer: "Global Scope",
-        choices: [
-            "Local Scope",
-            "Global Scope",
-            "Microscope",
-            "Jonathan Schoop",
-        ]    
-    },
-    {number: 5,
-        question: "How do you retrieve information from local storage?",
-        answer: "localStorage.getItem",
-        choices: [
-            "localStorage.getItem",
-            "localStorage.setItem",
-            "localStorage.betItem",
-            "localStroage.petItem",
-        ]
-    },
-
 ]
+showQuestion()
