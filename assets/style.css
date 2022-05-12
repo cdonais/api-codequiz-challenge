@@ -61,10 +61,36 @@ h1 {
     text-align: center;
     border: red solid 2px;
     display: none;
+    width: auto;
+}
+#question {
+    font-size: 32px;
+    color: yellow;
 }
 #choices {
-    display: grid
+    display: grid;
+    gap: 10px;
 }
+.btn span{
+    color: black;
+    padding:5px;
+    margin: 5px;
+    font-size: 28px;
+}
+.btn:hover{
+    border: solid red 5px;
+}
+
+#nextButton{
+    padding: 5px;
+    border-radius: 15%;
+    background-color: yellow;
+    color: black;
+    border: black solid 2px;
+
+
+}
+
 .submit-btn {
     padding: 5px;
     border-radius: 15%;
