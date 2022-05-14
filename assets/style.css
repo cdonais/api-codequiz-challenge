@@ -44,6 +44,13 @@ h1 {
 #startButton:hover {
     color: red;
 }
+#submitButton{
+    padding: 5px;
+    border-radius: 15%;
+    background-color: yellow;
+    color: black;
+    border: black solid 2px;
+}
 #scoreButton {
     padding: 5px;;
     border-radius: 15%;
@@ -67,18 +74,25 @@ h1 {
     font-size: 32px;
     color: yellow;
 }
-#choices {
-    display: grid;
-    gap: 10px;
-}
-.btn span{
-    color: black;
-    padding:5px;
-    margin: 5px;
+#choices ul{
+    list-style-type: none;
+} 
+#choices ul li {
     font-size: 28px;
 }
-.btn:hover{
-    border: solid red 5px;
+#rightAnswer {
+    display: none;
+    color: lightgreen;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: bold;
+}
+#wrongAnswer {
+    display: none;
+    color: red;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: bold;
 }
 
 #nextButton{
@@ -91,14 +105,5 @@ h1 {
 
 }
 
-.submit-btn {
-    padding: 5px;
-    border-radius: 15%;
-    background-color: yellow;
-    color: black;
-    border: black solid 2px;
-}
-.submit-btn:hover {
-    color: red;
-}
+
     

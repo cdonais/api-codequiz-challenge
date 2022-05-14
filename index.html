@@ -22,18 +22,38 @@
     </div>
     <div id="quizBox">
             <div class="timer">Time Remaining</div>
-            <div class="score">Score</div>
+            <div class="playerscore">Score</div>
         <section>
-                <div id="questions">
-                    <div id="question"></div>
+                <div id="questionContainer">
+                    <div id="question">Question</div>
                     <div id="choices">
-                        <button class="btn"><span>Answer 1</span></button>
-                        <button class="btn"><span>Answer2</span></button>
-                        <button class="btn"><span>Answer3</span></button>
-                        <button class="btn"><span>Answer4</span></button>
+                        <ul>
+                            <li>
+                                <input type="radio" name="answer" id="a" class="answer">
+                                <label for="a" id="aText">Answer A</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="answer" id="b" class="answer">
+                                <label for="b" id="bText">Answer B</label>
+
+                            </li>
+                            <li>
+                                <input type="radio" name="answer" id="c" class="answer">
+                                <label for="c" id="cText">Answer C</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="answer" id="d" class="answer">
+                                <label for="d" id="dText">Answer D</label>
+                            </li>
+                        </ul>
                     </div>
-                </div>    
-            <button id="nextButton">Next</button>
+                    <div id="answer-response">
+                        <div id="rightAnswer">Correct!</div>
+                        <div id="wrongAnswer">Incorrect!</div>
+                    </div>
+                    <button type="submit" id="submitButton">Submit</button>   
+                    <button id="nextButton">Next Question</button>
+                </div>
         </section>
     </div>
     <script src="./assets/script.js"></script>
