@@ -10,8 +10,15 @@ const bText=document.getElementById("bText");
 const cText=document.getElementById("cText");
 const dText=document.getElementById("dText");
 const nextButton=document.getElementById("nextButton");
-//var playerChoice=document.querySelector(label:checked)
+const highScoresPage=document.getElementById("highScorePage");
+var highScore=document.querySelector(".highScore");
+var highScoreName="";
 startButton.addEventListener('click', startQuiz)
+scoreButton.addEventListener('click', seeHighScores)
+
+function getPlayerName(){
+    var playerName=window.prompt("Your game has ended. Please enter your name to save your score of " + playerScore)
+}
 //set questions
 const questionsArray=[
     {question: "Which JavaScript data type is always either true or false?",
@@ -53,17 +60,29 @@ const questionsArray=[
                 correct: "d",
         },
 ];
+
+function seeHighScores(){
+    if (instructions.style.display !=="none"){
+        instructions.style.display = "none";
+    }
+    if (quizBox.style.display !=="none"){
+        quizBox.style.display = "none";
+    }
+    highScoresPage.style.display="block";
+    highScore=localStorage.getItem(highScore)
+    highScore.textContent=playerScore;
+    
+}
 //click start button to start quiz
 function startQuiz(){
     if (instructions.style.display !=="none"){
         instructions.style.display ="none";
-        quizBox.style.display="block"
+        quizBox.style.display="block";
     }
 };
     showQuestion();
 //begin timer    
     startTimer();
-    score.textcontent=playerScore
     function startTimer(){
         timeRemaining=setInterval(()=>{
             timer--;
@@ -71,7 +90,9 @@ function startQuiz(){
                 timerSpan.textContent=timer
             }
             if(timer === 0){
-                clearInterval(timeRemaining)
+                clearInterval(timer)
+                window.alert("Time is up, please try again.")
+                seeHighScores();
             }
         },1000)
     }       
@@ -127,10 +148,14 @@ function showQuestion() {
                         console.log(playerScore);
                     }
                     //after last question give final score and ask for name
-                    else {
-                        window.prompt("Your game has ended. Please enter your name to save your score of " + playerScore)
+                    else {getPlayerName();
+                    seeHighScores();
                     }
+                    localStorage.setItem("highScore",playerScore)
+                    localStorage.setItem("highScoreName", playerName)
+                    
+                    
                 })
-            
+
 //save score to local storage
 //on high scores click, take to page with high scores

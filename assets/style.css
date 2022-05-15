@@ -26,7 +26,12 @@ h1 {
     text-align: center;
     border: red solid 2px;
 }
-#instructions h2 {
+#highScorePage {
+    padding: 30px;
+    text-align: center;
+    display: none;
+}
+ h2 {
     color: yellow;
     font-weight: bold;
     font-size: 30px;
