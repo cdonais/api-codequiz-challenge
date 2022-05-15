@@ -1,5 +1,6 @@
 var playerScore=0
-//var timeRemaining=getElementById("timer");
+var timer= 120
+var timerSpan=document.getElementById("timer");
 let currentQuestion=0;
 const quizEl=document.getElementById("questionContainer");
 const questionEl=document.getElementById("question");
@@ -9,7 +10,7 @@ const bText=document.getElementById("bText");
 const cText=document.getElementById("cText");
 const dText=document.getElementById("dText");
 const nextButton=document.getElementById("nextButton");
-
+//var playerChoice=document.querySelector(label:checked)
 startButton.addEventListener('click', startQuiz)
 //set questions
 const questionsArray=[
@@ -61,6 +62,20 @@ function startQuiz(){
 };
     showQuestion();
 //begin timer    
+    startTimer();
+    score.textcontent=playerScore
+    function startTimer(){
+        timeRemaining=setInterval(()=>{
+            timer--;
+            if (timer>0){
+                timerSpan.textContent=timer
+            }
+            if(timer === 0){
+                clearInterval(timeRemaining)
+            }
+        },1000)
+    }       
+
 //show first question
 function showQuestion() { 
         const currentQuestionData=questionsArray[currentQuestion]
@@ -69,23 +84,35 @@ function showQuestion() {
         bText.textContent=currentQuestionData.b;
         cText.textContent=currentQuestionData.c;
         dText.textContent=currentQuestionData.d;
-        }
+}
+    function uncheckAnswer(){
+        choicesEl.forEach(choicesEl=>choicesEl.checked=false)
+    }
         //check if answer is correct
-        submitButton.addEventListener("click",checkAnswer)
-            function checkAnswer(){
-            var playerChoice=questionsArray.checked
-        //if answer is correct update player score and show rightAnswer text        
-            if (playerChoice === questionsArray.correct){
-            playerScore=playerScore+20;
-            rightAnswer.style.display="block";
+        function checkAnswer(){
+            let playerChoice
+            choicesEl.forEach(chosenEl => {
+                if(chosenEl.checked) {
+                    playerChoice=chosenEl.id
+                }
+            })
+            return playerChoice
+        }
+        submitButton.addEventListener("click",()=>{
+            const playerChoice=checkAnswer()
+            //if answer is correct update player score and show rightAnswer text        
+            if (playerChoice) {
+            if (playerChoice === questionsArray[currentQuestion].correct){
+                playerScore=playerScore+20;
+                rightAnswer.style.display="block";
             }
         //if answer is wrong deduct time
-             if (playerChoice !== questionsArray.correct){
-                playerScore=playerScore
-                wrongAnswer.style.display="none";
+             else{
+                wrongAnswer.style.display="block";
             timer=timeRemaining-20
             }
-    }
+        }
+        })
             nextButton.addEventListener("click",()=>{
                     currentQuestion++
                     console.log(playerScore);
@@ -104,7 +131,6 @@ function showQuestion() {
                         window.prompt("Your game has ended. Please enter your name to save your score of " + playerScore)
                     }
                 })
+            
 //save score to local storage
 //on high scores click, take to page with high scores
-
-
