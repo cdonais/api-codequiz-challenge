@@ -109,13 +109,13 @@ function showQuestion() {
         //if answer is wrong deduct time
              else{
                 wrongAnswer.style.display="block";
-            timer=timeRemaining-20
+                timer=timer-10;
             }
         }
         })
             nextButton.addEventListener("click",()=>{
                     currentQuestion++
-                    console.log(playerScore);
+                    console.log(score);
                     if(currentQuestion<questionsArray.length){
                         showQuestion ()
                         if (rightAnswer.style.display="block"){
