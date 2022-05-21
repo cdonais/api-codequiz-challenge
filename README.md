@@ -19,6 +19,6 @@ https://cdonais.github.io/api-codequiz-challenge/
 ![first question after answer-correct](./images/screenshot3.jpg)
 ![second question answer-wrong](./images/screenshot4.jpg)
 ![third question](./images/screenshot5.jpg)
-![final score](./images/screenshot6.jpg)
-![high score/local storage](./images/screenshot7.jpg)
+![final score](https://user-images.githubusercontent.com/102271275/169629205-d35fd9e0-4961-453d-93e4-860aa8dc2fc5.jpeg)
+![high score/localstorage](https://user-images.githubusercontent.com/102271275/169629134-2beb7615-8a7f-4805-967d-ec6f00f9fd1e.jpeg)
 ![timeout alert](./images/screenshot8.jpg)
