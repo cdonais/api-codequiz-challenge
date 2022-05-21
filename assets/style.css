@@ -56,6 +56,9 @@ h1 {
     color: black;
     border: black solid 2px;
 }
+#submitButton:hover{
+    background-color: lightgreen;
+}
 #scoreButton {
     padding: 5px;;
     border-radius: 15%;
@@ -65,6 +68,13 @@ h1 {
 }
 #scoreButton:hover{
     color: red;
+}
+#saveButton{
+padding: 5px;
+border-radius: 15%;
+background-color: yellow;
+color: black;
+border: black solid 2px;
 }
 #quizBox {
     padding: 30px;
@@ -106,8 +116,15 @@ h1 {
     background-color: yellow;
     color: black;
     border: black solid 2px;
+}
+#nextButton:hover {
+    background-color: red;
 
-
+}
+#playerName{
+    background-color: aliceblue;
+    color: black;
+    padding: 5px;
 }
 
 
