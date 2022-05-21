@@ -6,19 +6,23 @@ const quizEl=document.getElementById("questionContainer");
 const questionEl=document.getElementById("question");
 const choicesEl=document.querySelectorAll(".answer");
 const aText=document.getElementById("aText");
-const bText=document.getElementById("bText");
+const bText=document.getElementById("bText")
 const cText=document.getElementById("cText");
 const dText=document.getElementById("dText");
 const nextButton=document.getElementById("nextButton");
 const highScoresPage=document.getElementById("highScorePage");
 var highScore=document.querySelector(".highScore");
-var highScoreName="";
-startButton.addEventListener('click', startQuiz)
-scoreButton.addEventListener('click', seeHighScores)
+startButton.addEventListener('click', startQuiz);
+scoreButton.addEventListener('click', seeHighScores);
+saveButton.addEventListener('click', saveScore);
+var newName=document.getElementById("newName");
+var playerName=document.getElementById("playerName");
 
-function getPlayerName(){
-    var playerName=window.prompt("Your game has ended. Please enter your name to save your score of " + playerScore)
-}
+function showScore(){
+    window.alert("Your game has ended. Please enter your name to save your score of " + playerScore)
+        
+    }
+
 //set questions
 const questionsArray=[
     {question: "Which JavaScript data type is always either true or false?",
@@ -68,9 +72,13 @@ function seeHighScores(){
     if (quizBox.style.display !=="none"){
         quizBox.style.display = "none";
     }
+
     highScoresPage.style.display="block";
-    highScore=localStorage.getItem(highScore)
-    highScore.textContent=playerScore;
+}
+    function saveScore(){
+    newName.textContent=playerName.value + " " + playerScore;
+    localStorage.setItem("high score", newName.textContent);  
+    localStorage.getItem("high score");
     
 }
 //click start button to start quiz
@@ -79,10 +87,10 @@ function startQuiz(){
         instructions.style.display ="none";
         quizBox.style.display="block";
     }
+    startTimer()
 };
     showQuestion();
 //begin timer    
-    startTimer();
     function startTimer(){
         timeRemaining=setInterval(()=>{
             timer--;
@@ -148,14 +156,11 @@ function showQuestion() {
                         console.log(playerScore);
                     }
                     //after last question give final score and ask for name
-                    else {getPlayerName();
+                    else {showScore();
                     seeHighScores();
                     }
                     localStorage.setItem("highScore",playerScore)
-                    localStorage.setItem("highScoreName", playerName)
                     
                     
                 })
 
-//save score to local storage
-//on high scores click, take to page with high scores
