@@ -22,12 +22,10 @@
     </div>
     <div id="highScorePage">
         <h2>High Scores</h2>
-            <ol>
-                <li class="highScore"></li>
-                <li class="highScore"></li>
-                <li class="highScore"></li>
-                <li class="highScore"></li>
-                <li class="highScore"></li>
+            <input id=playerName type="text" placeholder="Enter Your Name">
+            <button type="submit" id="saveButton">Save</button>
+            <ol id="highScore">
+                <li id="newName"></li>
             </ol>
     </div>
     <div id="quizBox">
@@ -61,7 +59,7 @@
                         <div id="rightAnswer">Correct!</div>
                         <div id="wrongAnswer">Incorrect!</div>
                     </div>
-                    <button type="submit" id="submitButton">Submit</button>   
+                    <button type="submit" id="submitButton">Submit Answer</button>   
                     <button id="nextButton">Next Question</button>
                 </div>
         </section>
